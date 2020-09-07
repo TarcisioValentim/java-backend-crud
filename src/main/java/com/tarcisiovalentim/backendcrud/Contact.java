@@ -50,6 +50,4 @@ public class Contact {
 		this.description = description;
 	}
 	
-	
-	
 }

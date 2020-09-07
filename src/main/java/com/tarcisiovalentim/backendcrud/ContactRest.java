@@ -3,7 +3,9 @@ package com.franciscocalaca.backendcrud;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,12 +20,16 @@ public class ContactRest {
 	
 	@GetMapping
 	public List<Contact> get(){
-		return this.contactDao.findAll();
+		return contactDao.findAll();
 	}
 	
 	@PostMapping
 	public void post(@RequestBody Contact contact) {
-		this.contactDao.save(contact);
+		contactDao.save(contact);
 	}
 	
+	@DeleteMapping("/{id}")
+	public void delete(@PathVariable("id") Long id) {
+		contactDao.deleteById(id);
+	}
 }
