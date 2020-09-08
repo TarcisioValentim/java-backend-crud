@@ -1,4 +1,4 @@
-package com.franciscocalaca.backendcrud;
+package com.tarcisiovalentim.backendcrud;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
